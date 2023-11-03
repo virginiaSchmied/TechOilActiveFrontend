@@ -1,0 +1,54 @@
+﻿@page
+@model TechOilActiveRazorPage.Pages.ServicioModel
+@{
+    ViewData["Title"] = "Servicios";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+<form asp-action="updatedServicio" class="formularios" method="post">
+    <div class="form-group">
+        <label for="descr">Descripcion:</label>
+        <input type="text" id="descr" name="descr" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="estado">Estado:</label>
+        <input type="number" id="estado" name="estado" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="valorHora">Valor Hora:</label>
+        <input type="number" id="valorHora" name="valorHora" class="form-control" />
+    </div>
+    <button asp-page-handler="CrearServicio" type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Codigo del Servicio</th>
+            <th>Descripcion</th>
+            <th>Estado</th>
+            <th>Valor Hora</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var servicio in Model.Servicio)
+        {
+            <tr>
+                <td>@servicio.codServicio</td>
+                <td>@servicio.descr</td>
+                <td>@servicio.estado</td>
+                <td>@servicio.valorHora</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@servicio.codServicio" class="btn btn-primary">Editar</a>
+                    <form asp-page-handler="Delete" asp-route-id="@servicio.codServicio" method="post">
+                        <button type="submit" class="btn btn-danger">Borrar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

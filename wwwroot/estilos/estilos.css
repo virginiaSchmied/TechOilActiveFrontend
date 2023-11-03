@@ -1,0 +1,43 @@
+﻿
+.table {
+    justify-content: space-between; /* Centra los elementos y agrega espacio entre ellos */
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 6px;
+    background-color: #F1F1F1
+}
+
+.formularios {
+    display: flex;
+    justify-content: space-between; /* Centra los elementos y agrega espacio entre ellos */
+    border: 1px solid #C5C5C5;
+    padding: 15px;
+    margin: 1px;
+    background-color: #EAEAEA
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    padding: 3px;
+    margin-bottom: 10px;
+    
+}
+
+.form-group {
+    flex: 1; /* Hace que todos los elementos ocupen el espacio disponible */
+    margin: 0 10px; /* Agrega un margen horizontal entre los elementos para espaciarlos */
+    text-align: center; /* Centra el contenido de cada elemento */
+}
+
+button, btn btn-primary {
+    margin-top: 1px;
+}
+
+body {
+    background-color: #F9F9F9
+}
+
+.logo {
+    width: 30px;
+    height: 30px;
+}

@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "ALErLiIx2LiYefT5TM0dn0w4dkRNrbbBVz3G5kaQmLlv13MIRaCuB7/urjzSTFqGAqGP0Q8tIl4pa3xclXzmiA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\schmi\\source\\repos\\TechOilActiveRazorPage\\TechOilActiveRazorPage.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\schmi\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.0.3\\microsoft.identitymodel.abstractions.7.0.3.nupkg.sha512",
+    "C:\\Users\\schmi\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.0.3\\microsoft.identitymodel.jsonwebtokens.7.0.3.nupkg.sha512",
+    "C:\\Users\\schmi\\.nuget\\packages\\microsoft.identitymodel.logging\\7.0.3\\microsoft.identitymodel.logging.7.0.3.nupkg.sha512",
+    "C:\\Users\\schmi\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.0.3\\microsoft.identitymodel.tokens.7.0.3.nupkg.sha512",
+    "C:\\Users\\schmi\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\schmi\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.0.3\\system.identitymodel.tokens.jwt.7.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

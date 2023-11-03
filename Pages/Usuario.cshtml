@@ -1,0 +1,66 @@
+﻿@page
+@model TechOilActiveRazorPage.Pages.UsuarioModel
+@{
+    ViewData["Title"] = "Usuarios";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form class="formularios" method="post">
+
+    <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="dni">Dni:</label>
+        <input type="number" id="dni" name="dni" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="tipo">Tipo:</label>
+        <input type="number" id="tipo" name="tipo" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" name="contraseña" class="form-control" />
+    </div>
+
+    @*     <div class="form-group">
+    <label for="costo">Costo:</label>
+    <input type="number" id="costo" name="costo" class="form-control" />
+    </div> *@
+
+    <button asp-page-handler="CrearUsuario" type="submit" class="btn btn-primary">Ingresar</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Codigo del usuario</th>
+            <th>Nombre</th>
+            <th>Dni</th>
+            <th>Contraseña</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var usuario in Model.Usuario)
+        {
+            <tr>
+                <td>@usuario.codUsuario</td>
+                <td>@usuario.nombre</td>
+                <td>@usuario.dni</td>
+                <td>@usuario.contraseña</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@usuario.codUsuario" class="btn btn-primary">Editar</a>
+                    <form asp-page-handler="Delete" asp-route-id="@usuario.codUsuario" method="post">
+                        <button type="submit" class="btn btn-danger">Borrar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

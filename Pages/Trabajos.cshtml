@@ -1,0 +1,79 @@
+﻿@page
+@model TechOilActiveRazorPage.Pages.TrabajoModel
+@{
+    ViewData["Title"] = "Trabajos";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form class="formularios" method="post">
+
+    <div class="form-group">
+        <label for="fecha">Fecha:</label>
+        <input type="number" id="fecha" name="fecha" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="codProyecto">Proyecto:</label>
+        <input type="number" id="codProyecto" name="codProyecto" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="codServicio">Servicio:</label>
+        <input type="number" id="codServicio" name="codServicio" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="cantHoras">Horas:</label>
+        <input type="number" id="cantHoras" name="cantHoras" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="valorHora">Valor Hora:</label>
+        <input type="number" id="valorHora" name="valorHora" class="form-control" />
+    </div>
+
+@*     <div class="form-group">
+        <label for="costo">Costo:</label>
+        <input type="number" id="costo" name="costo" class="form-control" />
+    </div> *@
+
+    <button asp-page-handler="CrearTrabajo" type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Codigo del trabajo</th>
+            <th>Fecha</th>
+            <th>Codigo del proyecto</th>
+            <th>Codigo del servicio</th>
+            <th>Cantidad de horas</th>
+            <th>Valor hora</th>
+            <th>Costo del servicio</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var trabajo in Model.Trabajo)
+        {
+            <tr>
+                <td>@trabajo.codTrabajo</td>
+                <td>@trabajo.fecha</td>
+                <td>@trabajo.codProyecto</td>
+                <td>@trabajo.codServicio</td>
+                <td>@trabajo.cantHoras</td>
+                <td>@trabajo.valorHora</td>
+                <td>@trabajo.costo</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@trabajo.codTrabajo" class="btn btn-primary">Editar</a>
+                    <form asp-page-handler="Delete" asp-route-id="@trabajo.codTrabajo" method="post">
+                        <button type="submit" class="btn btn-danger">Borrar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+

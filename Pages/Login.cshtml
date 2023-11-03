@@ -1,0 +1,19 @@
+﻿@page
+@model LoginPageModel
+@{
+    ViewData["Title"] = "Inicio de sesión";
+}
+
+<h2>Inicio de sesión</h2>
+
+<form class="formularios" method="post">
+    <div class="form-group">
+        <label for="email">Correo electronico:</label>
+        <input type="email" id="email" name="email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="contraseña">Contraseña</label>
+        <input type="password" id="contraseña" name="contraseña" class="form-control" />
+    </div>
+    <button asp-page-handler="" type="submit" class="btn btn-primary">Ingresar</button>
+</form>
